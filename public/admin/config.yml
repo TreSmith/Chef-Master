@@ -11,12 +11,13 @@ collections:
       name: "home"
       file: "content/home.md"
       fields:
-        - { label: "Title", name: "title", widget: "string"}
-        - { label: "Publish Date", name: "date", widget: "datetime" }
-        - { label: "Body", name: "body", widget: "markdown"}
-        - label: 'Cats'
-          name: "cats"
-          widget: list
-          fields:
-            - { label: "Name", name: "name", widget: "string"}
-            - { label: "Description", name: "description", widget: "text"}
+        - { label: "Hero Image", name: "heroImage", widget: "image"}
+        - { label: "Hero Title", name: "heroTitle", widget: "string"}
+        - { label: "Hero Description", name: "heroDescription", widget: "markdown" }
+        - { label: "Hero Link URL", name: "heroLinkUrl", widget: "string" }
+        - { label: "Hero Link Text", name: "heroLinkText", widget: "string" }
+    - label: "Recipe"
+      name: "recipe"
+      file: "content/recipe.md"
+      fields:
+        
