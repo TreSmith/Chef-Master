@@ -16,8 +16,4 @@ collections:
         - { label: "Hero Description", name: "heroDescription", widget: "markdown" }
         - { label: "Hero Link URL", name: "heroLinkUrl", widget: "string" }
         - { label: "Hero Link Text", name: "heroLinkText", widget: "string" }
-    - label: "Recipe"
-      name: "recipe"
-      file: "content/recipe.md"
-      fields:
         
