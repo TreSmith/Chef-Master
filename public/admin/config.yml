@@ -4,20 +4,32 @@ backend:
 media_folder: public/img
 public_folder: img
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: 'pages'
+    label: 'Pages'
     files:
-    - label: "Home"
-      name: "home"
-      file: "content/home.md"
-      fields:
-        - { label: "Hero Image", name: "heroImage", widget: "image"}
-        - { label: "Hero Title", name: "heroTitle", widget: "string"}
-        - { label: "Hero Description", name: "heroDescription", widget: "markdown" }
-        - { label: "Hero Link URL", name: "heroLinkUrl", widget: "string" }
-        - { label: "Hero Link Text", name: "heroLinkText", widget: "string" }
-    - label: "Recipe"
-      name: "recipe"
-      file: "content/recipe.md"
-      fields:
-        
+      - label: 'Home'
+        name: 'home'
+        file: 'content/home.md'
+        fields:
+          - { label: 'Hero Image', name: 'heroImage', widget: 'image' }
+          - { label: 'Hero Title', name: 'heroTitle', widget: 'string' }
+          - {
+              label: 'Hero Description',
+              name: 'heroDescription',
+              widget: 'markdown',
+            }
+          - { label: 'Hero Link URL', name: 'heroLinkUrl', widget: 'string' }
+          - { label: 'Hero Link Text', name: 'heroLinkText', widget: 'string' }
+      # Recipe Details 
+      - label: 'RecipeDetail'
+        name: 'recipe_detail'
+        file: 'content/recipeDetail.md'
+        fields:
+          - { label: 'Recipe Title', name: 'title', widget: 'string' } # Recipe title
+          - { label: 'Author', name: 'author', widget: 'string' } # Author/Publication
+          - { label: 'Dairy Free', name: 'dairyFree', widget: 'string' } # Dairy Free
+            - { label: "Servings", name: "servings", widget: "number", default: 1, value_type: "int" } # servings
+            - { label: "Prep Time", name: "prepTime", widget: "string" } # prep time
+            - {label: "Cook Time" , name: "cookTime",widget: "string"} # cook time
+            - {label: "Featured Image" , name: "featuredImage",widget: "image"} # image
+            - { label: "Ingredients", name: "Ingredients", widget: "list", fields: [{ label: "Ingredient", widget: "string"} ]} # Ingredients
