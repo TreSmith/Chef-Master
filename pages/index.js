@@ -9,6 +9,10 @@ export default class Home extends Component {
       <>
         <Head>
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+          <link
+            rel="icon"
+            href="../static/images/logos/chefMasterProfileLogo.png"
+          ></link>
         </Head>
         <article>
           <h1>{title}</h1>

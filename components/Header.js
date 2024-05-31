@@ -1,3 +1,5 @@
+import Form from 'react-bootstrap/Form';
+
 const Header = () => {
   return (
     <div className="header">
@@ -24,7 +26,12 @@ const Header = () => {
             />
           </div>
 
-          <i className="fas fa-search">Search</i>
+          <Form.Control
+            type="text"
+            placeholder="Search"
+            className=" mr-sm-2"
+            id="searchBar"
+          />
         </div>
       </div>
     </div>
