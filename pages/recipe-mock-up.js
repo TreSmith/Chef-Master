@@ -1,11 +1,11 @@
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
-export const recipesMockUpPage = () => {
+const RecipeMockUp = () => {
   return (
     <Container className="mt-4">
       <Row>
         <Col md={8}>
-          <Image
+          <img
             src="/static/images/freeStockImages/street-food-feast-stockcake.jpg"
             fluid
           />
@@ -47,9 +47,11 @@ export const recipesMockUpPage = () => {
       <Row className="mt-4">
         <Col>
           <h3>Recipe Tutorial</h3>
-          <Image src="/static/images/freeStockImages/streetfood.jpg" />
+          <img src="/static/images/freeStockImages/streetfood.jpg" />
         </Col>
       </Row>
     </Container>
   );
 };
+
+export default RecipeMockUp;
