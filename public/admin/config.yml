@@ -20,24 +20,23 @@ collections:
             }
           - { label: 'Hero Link URL', name: 'heroLinkUrl', widget: 'string' }
           - { label: 'Hero Link Text', name: 'heroLinkText', widget: 'string' }
-      # Recipe Details
-    - name: 'recipes'
-      label: 'Recipes'
-      folder: 'content/recipes'
-      create: true
-      slug: "{{slug}}"
-      editor:
-        preview: false
-        fields:
-          - { label: 'Recipe Title', name: 'title', widget: 'string' } # Recipe title
-          - { label: 'Author', name: 'author', widget: 'string' } # Author/Publication
-          - { label: 'Dairy Free', name: 'dairyFree', widget: 'string' } # Dairy Free
-          - { label: "Servings", name: "servings", widget: "number", default: 1, value_type: "int" } # servings
-          - { label: "Prep Time", name: "prepTime", widget: "string" } # prep time
-          - { label: "Cook Time" , name: "cookTime",widget: "string"} # cook time
-          - { label: "Featured Image" , name: "featuredImage",widget: "image"} # image
-          - { label: "Ingredients", name: "Ingredients", widget: "list", fields: [{ label: "Ingredient", widget: "string"} ]} # Ingredients
-          - { label: "Cooking Instructions", name: "instructions", widget: "markdown"}
-          - {label: "Video Title", name: "videoTitle", widget: "string"}
-          - { label: "Video URL", name: "videoURL", widget: "string"}
+  - name: 'recipes'
+    label: 'Recipes'
+    folder: 'content/recipes'
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: false
+      fields:
+        - { label: 'Recipe Title', name: 'title', widget: 'string' } # Recipe title
+        - { label: 'Author', name: 'author', widget: 'string' } # Author/Publication
+        - { label: 'Dairy Free', name: 'dairyFree', widget: 'string' } # Dairy Free
+        - { label: "Servings", name: "servings", widget: "number", default: 1, value_type: "int" } # servings
+        - { label: "Prep Time", name: "prepTime", widget: "string" } # prep time
+        - { label: "Cook Time" , name: "cookTime",widget: "string"} # cook time
+        - { label: "Featured Image" , name: "featuredImage",widget: "image"} # image
+        - { label: "Ingredients", name: "Ingredients", widget: "list", fields: [{ label: "Ingredient", widget: "string"} ]} # Ingredients
+        - { label: "Cooking Instructions", name: "instructions", widget: "markdown"}
+        - {label: "Video Title", name: "videoTitle", widget: "string"}
+        - { label: "Video URL", name: "videoURL", widget: "string"}
             
