@@ -37,8 +37,7 @@ collections:
       - { label: "Prep Time", name: "prepTime", widget: "string" } # prep time
       - { label: "Cook Time" , name: "cookTime",widget: "string"} # cook time
       - { label: "Featured Image" , name: "featuredImage",widget: "image"} # image
-      - { label: "Ingredients", name: "Ingredients", widget: "list", fields: [{ label: "Ingredient", widget: "string"} ]} # Ingredients
+      - { label: "Ingredients", name: "Ingredients", widget: "list", fields: [{ label: "Ingredient", name: "ingredient", widget: "string"} ]} # Ingredients
       - { label: "Cooking Instructions", name: "instructions", widget: "markdown"}
       - {label: "Video Title", name: "videoTitle", widget: "string"}
       - { label: "Video URL", name: "videoURL", widget: "string"}
-            
