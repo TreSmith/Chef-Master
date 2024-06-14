@@ -6,7 +6,7 @@ const RecipeMockUp = () => {
       <Row>
         <Col md={8}>
           <img
-            src="/static/images/freeStockImages/street-food-feast-stockcake.jpg"
+            src="img/freeStockImages/street-food-feast-stockcake.jpg"
             fluid
           />
         </Col>
@@ -47,7 +47,7 @@ const RecipeMockUp = () => {
       <Row className="mt-4">
         <Col>
           <h3>Recipe Tutorial</h3>
-          <img src="/static/images/freeStockImages/streetfood.jpg" />
+          <img src="img/freeStockImages/streetfood.jpg" />
         </Col>
       </Row>
     </Container>
