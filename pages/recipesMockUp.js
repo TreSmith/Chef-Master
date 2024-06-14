@@ -1,6 +1,6 @@
 import { Container } from 'react-bootstrap';
 
-export default recipesMockUpPage = () => {
+export const recipesMockUpPage = () => {
   return (
     <Container className="mt-4">
       <Row>
