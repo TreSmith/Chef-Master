@@ -32,6 +32,7 @@ collections:
     fields:
       - { label: 'Recipe Title', name: 'title', widget: 'string' } # Recipe title
       - { label: 'Author', name: 'author', widget: 'string' } # Author/Publication
+      - { label: "Summary", name: "summary", widget: "markdown" }
       - { label: 'Dairy Free', name: 'dairyFree', widget: 'boolean' } # Dairy Free
       - { label: "Servings", name: "servings", widget: "number", default: 1, value_type: "int" } # servings
       - { label: "Prep Time", name: "prepTime", widget: "string" } # prep time
