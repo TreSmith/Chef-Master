@@ -25,19 +25,22 @@ collections:
     folder: 'content/recipes'
     create: true
     slug: "{{slug}}"
-    media_folder: ""
-    public_folder: ""
+    media_folder: "public/img/recipe_data"
+    public_folder: "img/recipe_data"
     editor:
       preview: false
     fields:
       - { label: 'Recipe Title', name: 'title', widget: 'string' } # Recipe title
       - { label: 'Author', name: 'author', widget: 'string' } # Author/Publication
-      - { label: 'Dairy Free', name: 'dairyFree', widget: 'string' } # Dairy Free
+      - { label: 'Dairy Free', name: 'dairyFree', widget: 'boolean' } # Dairy Free
       - { label: "Servings", name: "servings", widget: "number", default: 1, value_type: "int" } # servings
       - { label: "Prep Time", name: "prepTime", widget: "string" } # prep time
       - { label: "Cook Time" , name: "cookTime",widget: "string"} # cook time
       - { label: "Featured Image" , name: "featuredImage",widget: "image"} # image
-      - { label: "Ingredients", name: "Ingredients", widget: "list", fields: [{ label: "Ingredient", name: "ingredient", widget: "string"} ]} # Ingredients
+      - { label: "Ingredients", name: "Ingredients", widget: "list", 
+          fields: [
+          { label: "Ingredient", name: "ingredient", widget: "string"} 
+        ]} # Ingredients
       - { label: "Cooking Instructions", name: "instructions", widget: "markdown"}
       - {label: "Video Title", name: "videoTitle", widget: "string"}
       - { label: "Video URL", name: "videoURL", widget: "string"}
