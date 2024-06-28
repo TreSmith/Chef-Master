@@ -40,7 +40,6 @@ ingredients:
   - ingredient: 1/2 cup lemon juice
   - ingredient: Sea Salt
   - ingredient: "10 grilled shrimp seasoned with lemon juice and garlic "
-  - ingredient: fsdsafssdss
 instructions: '`"Chop, mince and dice all veggies & spices.\n Combine bell
   pepper, onion, garlic, tapioca, rosemary, lemon zest, artichokes, chicken
   thighs, salt and pepper in crockpot.\n Pour broth and lemon juice over
