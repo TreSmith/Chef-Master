@@ -33,9 +33,9 @@ const importRecipeData = async () => {
         return(
             <div className='recipe-list'>
                 {
-                    recipeList.map(recipe =>{
+                    recipeList.map((recipe, key) =>{
                         return(
-                            <Link href={`recipe/${recipe.slug}`}>
+                            <Link href={`recipe/${recipe.slug}`} key={key}>
                                     <img src={recipe.attributes.featuredImage}/>
                                     <h2>{recipe.attributes.title}</h2>
                             </Link>
