@@ -6,7 +6,7 @@ const Header = () => {
       <div className="header-left">
         <div className="logoSection">
           <img
-            src="img/logos/chefMasterLogo.png"
+            src="/img/logos/chefMasterLogo.png"
             className="chef-master-logo"
             alt="chef master logo"
             id="chefMasterLogo"
@@ -19,7 +19,7 @@ const Header = () => {
         <div className="header-right">
           <div className="logoSectionRight">
             <img
-              src="img/logos/chefMasterProfileLogo.png"
+              src="/img/logos/chefMasterProfileLogo.png"
               className="chef-master-profile-logo"
               alt="chef master profile logo"
               id="chefMasterProfileLogo"

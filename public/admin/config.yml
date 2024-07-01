@@ -24,7 +24,10 @@ collections:
     label: 'Recipes'
     folder: 'content/recipes'
     create: true
-    slug: "{{slug}}"
+    slug:
+      encoding: "ascii"
+      clean_accents: true
+      sanitize_replacement: "_"
     media_folder: "public/img"
     public_folder: "img"
     editor:
