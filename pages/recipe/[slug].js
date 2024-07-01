@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import RecipeDetail from '../../components/RecipeDetail';
 
-
 class Post extends Component {
   static async getInitialProps({ query }) {
     const { slug } = query;
@@ -19,35 +18,35 @@ class Post extends Component {
 
     const { html, attributes } = this.props.recipePost.default;
 
-    console.log(attributes)
-    
-    let {title,
-    author,
-    summary,
-    dairyFree,
-    servings,
-    prepTime,
-    cookTime,
-    featuredImage,
-    ingredients,
-    instructions,
-    videoTitle,
-    videoURL} = attributes;
+    console.log(attributes);
+
+    let {
+      title,
+      author,
+      summary,
+      dairyFree,
+      servings,
+      prepTime,
+      cookTime,
+      featuredImage,
+      ingredients,
+      instructions,
+    } = attributes;
 
     return (
       <>
-        <RecipeDetail title={attributes.title},
-    author={attributes.author},
-    summary={attributes.summary},
-    dairyFree={attributes.dairyFree},
-    servings={attributes.servings},
-    prepTime={attributes.prepTime},
-    cookTime={attributes.cookTime},
-    featuredImage,
-    ingredients,
-    instructions,
-    videoTitle,
-    videoURL,/>
+        <RecipeDetail
+          title={title}
+          author={author}
+          summary={summary}
+          dairyFree={dairyFree}
+          servings={servings}
+          prepTime={prepTime}
+          cookTime={cookTime}
+          featuredImage={featuredImage}
+          ingredients={ingredients}
+          instructions={instructions}
+        />
       </>
     );
   }
