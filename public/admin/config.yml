@@ -20,6 +20,11 @@ collections:
             }
           - { label: 'Hero Link URL', name: 'heroLinkUrl', widget: 'string' }
           - { label: 'Hero Link Text', name: 'heroLinkText', widget: 'string' }
+          - label: "Featured Recipes"
+            name: 'featuredRecipes'
+            widget: 'relation'
+            collection: 'recipes'
+            search_fields: ["title"]
   - name: 'recipes'
     label: 'Recipes'
     folder: 'content/recipes'
@@ -49,3 +54,17 @@ collections:
         fields:
           - { label: "Step", name: "step", widget: "string" }
       - { label: "Cooking Instructions", name: "instructions", widget: "markdown"}
+  - name: 'siteSettings'
+    label: 'Site Settings'
+    folder: 'content/settings'
+    media_folder: 'public/img'
+    public_folder: 'img'
+    fields:
+      - { label: 'Site Title', name: 'title', widget: 'string' }
+      - { label: 'Site Logo', name: 'siteLogo', widget: 'image' }
+      - label: 'Navigation Bar Links'
+        name: 'navBarLinks'
+        widget: 'list'
+        fields:
+          - { label: 'Link Text', name: 'linkText', widget: 'string'}
+          - { label: 'Link URL', name: 'linkURL', widget: 'string' }
