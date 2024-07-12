@@ -1,4 +1,5 @@
-import Form from 'react-bootstrap/Form';
+import { Padding } from '@mui/icons-material';
+import SearchBarWithIcon from './SearchBarWithIcon';
 
 const Header = () => {
   return (
@@ -25,13 +26,18 @@ const Header = () => {
               id="chefMasterProfileLogo"
             />
           </div>
-
-          <Form.Control
+          <div style={{ Padding: '20px' }}>
+            <SearchBarWithIcon />
+          </div>
+          {/* <Form.Control
             type="text"
             placeholder="Search"
-            className=" mr-sm-2"
+            className=" mr-sm-3"
             id="searchBar"
           />
+          <div>
+            <SearchIcon />
+          </div> */}
         </div>
       </div>
     </div>
