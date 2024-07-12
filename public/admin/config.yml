@@ -24,7 +24,9 @@ collections:
             name: 'featuredRecipes'
             widget: 'relation'
             collection: 'recipes'
-            search_fields: ["title"]
+            multiple: true
+            searchFields: ["title"]
+            valueField: "title"
   - name: 'recipes'
     label: 'Recipes'
     folder: 'content/recipes'
