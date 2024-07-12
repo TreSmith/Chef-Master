@@ -49,5 +49,3 @@ collections:
         fields:
           - { label: "Step", name: "step", widget: "string" }
       - { label: "Cooking Instructions", name: "instructions", widget: "markdown"}
-      - {label: "Video Title", name: "videoTitle", widget: "string"}
-      - { label: "Video URL", name: "videoURL", widget: "string"}
