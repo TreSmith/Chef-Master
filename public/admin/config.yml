@@ -24,7 +24,7 @@ collections:
     label: 'Recipes'
     folder: 'content/recipes'
     create: true
-    slug:
+    slug: "{{slug}}"
       encoding: "ascii"
       clean_accents: true
       sanitize_replacement: "_"
