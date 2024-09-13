@@ -1,5 +1,4 @@
 ---
-title: Awesome kitties
 heroImage: img/pexels-chanwalrus-958545.jpg
 heroTitle: Chef Master
 heroDescription: >-
@@ -14,6 +13,3 @@ featuredRecipes:
   - Easy Slow Cooker Artichoke Garlic Chicken
   - Lemon, Garlic and Thyme Roast Chicken – Quick and Easy Method
 ---
-Welcome to my awesome page about cats of the internet.
-
-This page is built with NextJS, and content is managed in Decap CMS

@@ -32,8 +32,6 @@ collections:
     folder: 'content/recipes'
     create: true
     slug: "{{slug}}"
-    media_folder: "public/img"
-    public_folder: "img"
     editor:
       preview: false
     fields:
@@ -59,8 +57,6 @@ collections:
   - name: 'siteSettings'
     label: 'Site Settings'
     folder: 'content/settings'
-    media_folder: 'public/img'
-    public_folder: 'img'
     fields:
       - { label: 'Site Title', name: 'title', widget: 'string' }
       - { label: 'Site Logo', name: 'siteLogo', widget: 'image' }
