@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import React, { Component } from 'react';
-import Fuse from 'fuse.js';
 import SearchBarWithIcon from '../../components/SearchBarWithIcon';
 
 const RECIPE_POSTS_PATH = '../../content/recipes';
@@ -31,8 +30,6 @@ const filterRecipeData = (recipeLists, keyword) => {
     return lowerCaseTitle.includes(keyword.toLowerCase());
   });
 
-  console.log('Filtered Recipes:', filteredRecipes);
-
   if (filteredRecipes.length === 0) {
     console.warn('No matching recipes found');
   }
@@ -44,7 +41,6 @@ export default class Recipe extends Component {
   static async getInitialProps() {
     try {
       const recipeList = await importRecipeData();
-      console.log('Recipe List:', recipeList);
       return { recipeList };
     } catch (error) {
       console.error('Error fetching recipe data:', error);
@@ -77,7 +73,6 @@ export default class Recipe extends Component {
 
   filterRecipes(keyword) {
     const filteredRecipes = filterRecipeData(this.props.recipeList, keyword);
-    console.log('Filtered Recipes:', filteredRecipes);
 
     this.setState({ filteredRecipes });
   }
@@ -85,12 +80,6 @@ export default class Recipe extends Component {
   render() {
     const { recipeList } = this.props;
     const { filteredRecipes, searchTerm } = this.state;
-
-    console.log('Current state:', {
-      filteredRecipes,
-      searchTerm,
-      recipeList,
-    });
 
     if (!recipeList || recipeList.length === 0) {
       return <div>No recipes found</div>;
