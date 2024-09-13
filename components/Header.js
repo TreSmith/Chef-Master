@@ -1,13 +1,16 @@
 import { Padding } from '@mui/icons-material';
 import SearchBarWithIcon from './SearchBarWithIcon';
+import { attributes } from '../content/settings/siteSettings.md';
 
 const Header = () => {
+  let {siteLogo} = attributes;
+
   return (
     <div className="header">
       <div className="header-left">
         <div className="logoSection">
           <img
-            src="/img/logos/chefMasterLogo.png"
+            src={siteLogo}
             className="chef-master-logo"
             alt="chef master logo"
             id="chefMasterLogo"
@@ -29,15 +32,6 @@ const Header = () => {
           <div style={{ Padding: '20px' }}>
             <SearchBarWithIcon />
           </div>
-          {/* <Form.Control
-            type="text"
-            placeholder="Search"
-            className=" mr-sm-3"
-            id="searchBar"
-          />
-          <div>
-            <SearchIcon />
-          </div> */}
         </div>
       </div>
     </div>

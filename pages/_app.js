@@ -6,6 +6,7 @@ import Head from 'next/head';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/header.scss';
 import '../styles/navbar.scss';
+import '../styles/recipeStyles.scss';
 
 export default class MyApp extends App {
   render() {
