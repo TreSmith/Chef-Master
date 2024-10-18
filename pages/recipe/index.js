@@ -1,9 +1,8 @@
 //Got major help from this chunk of code https://github.com/masives/netlifycms-nextjs/blob/master/pages/blog/index.js
 
-import Link from "next/link";
-import React, { Component } from "react";
-import Fuse from "fuse.js";
-import SearchBarWithIcon from "../../components/SearchBarWithIcon";
+import Link from 'next/link';
+import React, { Component } from 'react';
+import SearchBarWithIcon from '../../components/SearchBarWithIcon';
 
 const RECIPE_POSTS_PATH = "../../content/recipes";
 
@@ -23,54 +22,88 @@ const importRecipeData = async () => {
   );
 };
 
-const filterRecipeData = (recipeLists, keyWordSearch) => {
-  const fuse = new Fuse(recipeLists, {
-    keys: ["title"],
+const filterRecipeData = (recipeLists, keyword) => {
+  console.log('Recipes Lists', recipeLists);
+
+  const filteredRecipes = recipeLists.filter((recipe) => {
+    const lowerCaseTitle = recipe.attributes.title.toLowerCase();
+    return lowerCaseTitle.includes(keyword.toLowerCase());
   });
 
-  const searchResult = fuse.search(keyWordSearch);
+  if (filteredRecipes.length === 0) {
+    console.warn('No matching recipes found');
+  }
 
-  return searchResult;
+  return filteredRecipes;
 };
 
 export default class Recipe extends Component {
   static async getInitialProps() {
-    const recipeList = await importRecipeData();
+    try {
+      const recipeList = await importRecipeData();
+      return { recipeList };
+    } catch (error) {
+      console.error('Error fetching recipe data:', error);
+      return {};
+    }
+  }
 
-    return { recipeList };
+  constructor(props) {
+    super(props);
+    this.state = {
+      filterRecipes: props.recipeList,
+      searchTerm: '',
+    };
+  }
+
+  componentDidMount() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const value = urlParams.getAll('q');
+
+    if (value && value.length > 0) {
+      this.filterRecipes(value[0]);
+    } else {
+      this.setState({
+        filteredRecipes: this.props.recipeList,
+        searchTerm: '',
+      });
+    }
+  }
+
+  filterRecipes(keyword) {
+    const filteredRecipes = filterRecipeData(this.props.recipeList, keyword);
+
+    this.setState({ filteredRecipes });
   }
 
   render() {
     const { recipeList } = this.props;
+    const { filteredRecipes, searchTerm } = this.state;
+
+    if (!recipeList || recipeList.length === 0) {
+      return <div>No recipes found</div>;
+    }
+
     return (
       <>
+        <SearchBarWithIcon
+          placeholder={searchTerm || 'Search...'}
+          onSearch={(keyword) => {
+            this.filterRecipes(keyword);
+          }}
+        />
         <div className="recipe-list">
-          <div className="page-header">
-            <h1>Recipes</h1>
-          </div>
-          <div className="mb-section">
-            <SearchBarWithIcon />
-          </div>
-          <div className="container">
-            <div className="row">
-              {recipeList.map((recipe, key) => {
-                return (
-                  <div className="col-sm" key={key}>
-                    <Link href={`recipe/${recipe.slug}`}>
-                      <div className="recipe-card">
-                        <img
-                          className="recipe-card--image"
-                          src={recipe.attributes.featuredImage}
-                        />
-                        <h4>{recipe.attributes.title}</h4>
-                        <p className="recipe-card--summary">Example Summary</p>
-                      </div>
-                    </Link>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+          {filteredRecipes && filteredRecipes.length > 0 ? (
+            filteredRecipes.map((recipe, key) => (
+              <Link href={`recipe/${recipe.slug}`} key={key}>
+                <img src={recipe.attributes.featuredImage} />
+                <h2>{recipe.attributes.title}</h2>
+              </Link>
+            ))
+          ) : (
+            <p>No matching recipes found.</p>
+          )}
         </div>
       </>
     );
